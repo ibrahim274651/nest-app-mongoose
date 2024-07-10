@@ -14,43 +14,25 @@ export class CategoriesService {
     @InjectModel(Category.name)
     private categoryModel: Model<CategoryDocument>,
   ) {}
-  async create(createCategoryDto: CreateCategoryDto): Promise<Category> {
-    const createCategory = new this.categoryModel(createCategoryDto);
-    return createCategory.save();
+  create(createCategoryDto: CreateCategoryDto) {
+    return new this.categoryModel(createCategoryDto).save();
   }
 
-  async findAll(): Promise<Category[]> {
+  findAll() {
     return this.categoryModel.find().exec();
   }
 
-  async findOne(id: string): Promise<Category> {
-    const category = await this.categoryModel.findById(id).exec();
-    if (!category) {
-      throw new NotFoundException(`Category with ID "${id}" not found`);
-    }
-    return category;
+  findOne(id: string) {
+    return this.categoryModel.findById(id);
   }
 
-  async update(
-    id: string,
-    updateCategoryDto: UpdateCategoryDto,
-  ): Promise<Category> {
-    const uptdatedCategory = await this.categoryModel
-      .findByIdAndUpdate(id, updateCategoryDto, { new: true })
-      .exec();
-    if (!uptdatedCategory) {
-      throw new NotFoundException(`Category with ID "${id}" not found`);
-    }
-    return uptdatedCategory;
+  update(id: string, updateCategoryDto: UpdateCategoryDto) {
+    return this.categoryModel.findByIdAndUpdate(id, updateCategoryDto, {
+      new: true,
+    });
   }
 
-  async remove(id: string): Promise<Category> {
-    const deletedCategory = await this.categoryModel
-      .findByIdAndDelete(id)
-      .exec();
-    if (!deletedCategory) {
-      throw new NotFoundException(`Category with ID "${id}" not found`);
-    }
-    return deletedCategory;
+  remove(id: string) {
+    return this.categoryModel.findByIdAndDelete(id);
   }
 }
