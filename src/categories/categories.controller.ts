@@ -20,7 +20,7 @@ export class CategoriesController {
   constructor(private readonly categoriesService: CategoriesService) {}
 
   @Post('/create')
-  @UsePipes(new ValidationPipe())
+  //@UsePipes(new ValidationPipe())
   create(@Body() createCategoryDto: CreateCategoryDto) {
     return this.categoriesService.create(createCategoryDto);
   }
@@ -40,7 +40,7 @@ export class CategoriesController {
   }
 
   @Patch('/:id')
-  @UsePipes(new ValidationPipe())
+  //@UsePipes(new ValidationPipe())
   async update(
     @Param('id') id: string,
     @Body() updateCategoryDto: UpdateCategoryDto,
