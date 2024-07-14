@@ -1,22 +1,18 @@
-import {
-  IsEmail,
-  IsNotEmpty,
-  IsNumber,
-  IsOptional,
-  IsString,
-} from 'class-validator';
+import { CreateProfileDto } from './../../../profile/dto/create-profile.dto';
+import { IsEmail, IsNotEmpty } from 'class-validator';
 
 export class CreateUserDto {
   @IsNotEmpty()
-  @IsString()
-  fname: string;
-  @IsNotEmpty()
-  @IsString()
-  lname: string;
-  @IsNotEmpty()
   @IsEmail()
   email: string;
-  @IsNumber()
-  @IsOptional()
-  age?: number;
+
+  @IsNotEmpty()
+  password: string;
+
+  @IsNotEmpty()
+  profile: CreateProfileDto;
+
+  // @IsOptional()
+  // @ValidateNested()
+  // profile?: CreateProfileDto;
 }

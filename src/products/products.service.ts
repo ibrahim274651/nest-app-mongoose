@@ -17,11 +17,14 @@ export class ProductsService {
   }
 
   async findAll(): Promise<Product[]> {
-    return this.productModel.find().exec();
+    return this.productModel.find().populate('categoryId').exec();
   }
 
   async findOne(id: string): Promise<Product> {
-    const product = await this.productModel.findById(id);
+    const product = await this.productModel
+      .findById(id)
+      .populate('category')
+      .exec();
     if (!product) {
       throw new NotFoundException(`Product with ID "${id}" not found`);
     }

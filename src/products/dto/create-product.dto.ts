@@ -14,10 +14,13 @@ export class CreateProductDto {
   name: string;
 
   @IsNumber()
+  @IsNotEmpty()
   price: number;
 
-  @IsOptional()
-  @ValidateNested()
-  @Type(() => CreateCategoryDto)
-  category?: CreateCategoryDto;
+  // @ValidateNested()
+  // @Type(() => CreateCategoryDto)
+  // category: CreateCategoryDto;
+
+  @IsNotEmpty()
+  categoryId: string;
 }

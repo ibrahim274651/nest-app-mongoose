@@ -14,13 +14,23 @@ export class CategoriesService {
     @InjectModel(Category.name)
     private categoryModel: Model<CategoryDocument>,
   ) {}
-  create(createCategoryDto: CreateCategoryDto) {
-    return new this.categoryModel(createCategoryDto).save();
+
+  // create(createCategoryDto: CreateCategoryDto) {
+  //   return new this.categoryModel(createCategoryDto).save();
+  // }
+
+  async create(createCategoryDto: CreateCategoryDto): Promise<Category> {
+    const createdCategory = new this.categoryModel(createCategoryDto);
+    return createdCategory.save();
   }
 
-  findAll() {
-    return this.categoryModel.find().exec();
+  async findAll(): Promise<Category[]> {
+    return this.categoryModel.find().populate('products').exec();
   }
+
+  // findAll() {
+  //   return this.categoryModel.find().exec();
+  // }
 
   findOne(id: string) {
     return this.categoryModel.findById(id);

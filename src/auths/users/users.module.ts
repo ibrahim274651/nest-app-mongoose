@@ -6,9 +6,14 @@ import { UsersController } from './users.controller';
 import { Profile, ProfileSchema } from 'src/profile/entities/profile.entity';
 
 @Module({
+  // imports: [
+  //   MongooseModule.forFeature([{ name: User.name, schema: UserSchema }]),
+  // ],
   imports: [
-    MongooseModule.forFeature([{ name: User.name, schema: UserSchema }]),
-    MongooseModule.forFeature([{ name: Profile.name, schema: ProfileSchema }]),
+    MongooseModule.forFeature([
+      { name: User.name, schema: UserSchema },
+      { name: Profile.name, schema: ProfileSchema },
+    ]),
   ],
   controllers: [UsersController],
   providers: [UsersService],

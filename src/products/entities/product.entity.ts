@@ -17,7 +17,7 @@ export class Product {
     ref: Category.name,
     required: true,
   })
-  category?: Category;
+  categoryId: Category;
 }
 
 export const ProductSchema = SchemaFactory.createForClass(Product);
