@@ -7,15 +7,16 @@ import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import mongoose from 'mongoose';
 
 async function bootstrap() {
-  const PORT = process.env.PORT || 8000;
+  const PORT = process.env.PORT || 9000;
   const app = await NestFactory.create(AppModule);
   app.useGlobalPipes(new ValidationPipe());
+  app.enableCors()
 
   const config = new DocumentBuilder()
     .setTitle('Ibrahim App')
     .setDescription('Learning nestJs')
     .setVersion('1.0')
-    .addServer('http://127.0.0.1:8000', 'Local environment')
+    .addServer('http://127.0.0.1:9000', 'Local environment')
     .build();
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('api/ibrahim-app', app, document);

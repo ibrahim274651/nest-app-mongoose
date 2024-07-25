@@ -1,0 +1,66 @@
+{
+    "no_data": "No found data",
+    "name_used": "This name is used",
+    "phone_used": "This phone number is used",
+    "bad_request": "Bad request",
+    "no_found": "Not found",
+    "no_access": "You have not access",
+    "delete_success": "Delete successfully",
+    "save_success": "Save successfully",
+    "update_success": "Update successfully",
+    "save_failed": "Registration failure",
+    "delete_failed": "Deletion failure",
+    "update_failed": "Modification failure",
+    "found_failed": "Error occurred during found data",
+
+    "etablissment_exist":  "Establishment already exists",
+    "etablissment_no_exist":  "Establishment is not exists",
+    "nif_required": "NIF is required",
+    "fail_to_upadate_establissment": "Fail to upadate establissment",
+    "etablissment_desactive": "You are blocked, please pay the subscription",
+
+    "assign_success": "Assignment with success",
+
+
+    "student_exist_class": "Student is alread exist in this class",
+    "transfer_failed": "Error occurred during transfer",
+    "is_not_transferred": "is not transferred or exists!",
+    "are_not_transferred": "are not transferred",
+    "have_not_been_transferred": "Have not been transferred",
+    "transfer_successfully": "Transfer successfully",
+
+    "year_class_exist": "This year's class already exists",
+    "class_used": "This class is already used",
+    "verify_date": "This year is current or the start date is equal to the end date",
+    "designation_fac_dep_exist": "A designation with the same faculty or department already exists",
+
+    "faculty_required": "Faculty is required",
+    "designation_exist": "this designation is already exist",
+    "deadline_exist": "The deadline already exists",
+    "deadline_no_exist": "The deadline is not exists",
+
+    "validation_success": "Validation with success",
+    "validation_failed": "Error occurred during validation",
+    "delete_failed_used": "Deletion cannot be performed because it is in use",
+
+    "fees_exist": "This fee already exists",
+    "fees_used": "This fee is already in used",
+
+    "message_exist": "This messages is alread exist",
+    "message_used": "This messages is already in used",
+
+    "notification_exist": "This notification setting is exist",
+
+    "no_debt": "No debt you have",
+    "exceeded": "You have exceeded",
+
+    "procince_exist": "A designation with the same name of the province already exists.",
+    "delete_on_be_performed": "Deletion cannot be performed",
+
+
+    "course_exist": "Data already exist!"
+
+    
+
+
+}
